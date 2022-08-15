@@ -1,0 +1,823 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #AfAfAf;
+    font-family: 'Michroma', 'Raleway', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+div {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+#editor_container {
+    min-width: 340px;
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background: #ddd;
+    overflow-y: scroll;
+}
+
+#execution_container {
+    min-width: 340px;
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    background: #555;
+    overflow-y: scroll;
+}
+
+#editor_container div.toggle1 {
+    border-radius: 2px;
+    background: #222;
+    color: #ddd;
+    cursor: pointer;
+    position: relative;
+    font-size: 24px;
+    opacity: 0.6;
+    max-width: fit-content;
+    float: left;
+    padding: 2px 10px 2px 10px;
+}
+
+#editor_container div.toggle2 {
+    border-radius: 2px;
+    background: #111;
+    color: #ddd;
+    cursor: pointer;
+    position: relative;
+    font-size: 26px;
+    opacity: 0.8;
+    max-width: fit-content;
+    float: left;
+    padding: 2px 10px 2px 10px;
+}
+
+#execution_selector {
+    background: #ccc;
+    color: #333;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 22px;
+    text-align: left;
+    display: inline;
+    margin: 5px;
+    border: none;
+    min-width: 90%;
+    padding: 0 0 0 0;
+}
+
+#initial {
+    margin: 40px 40px 40px 22px;
+}
+
+    #initial select {
+        /*font-size: 50px;*/
+        max-width: 122px;
+    }
+
+    #initial .initial_state {
+        padding: 10px 10px 10px 10px;
+        margin-bottom: 10px;
+        background: #ccc;
+    }
+
+    #initial .initial_title {
+        font-size: 30px;
+        padding-left: 22px;
+        text-align: left;
+    }
+
+    #initial div.chevron {
+        width: 22px;
+        height: 22px;
+        font-size: 22px;
+        font-weight: 400;
+        cursor: pointer;
+        opacity: 0.4;
+        display: inline-block;
+        text-align: right;
+    }
+
+    #initial button.delete_state {
+        border-radius: 2px;
+        background: #222;
+        color: #ddd;
+        cursor: pointer;
+        position: relative;
+        font-size: 20px;
+        height: 31px;
+        opacity: 0.6;
+        max-width: fit-content;
+        padding: 2px 10px 2px 10px;
+    }
+
+    #initial .select_predicate {
+        opacity: inherit;
+        background: inherit;
+        position: relative;
+        width: 300px;
+        font-size: 22px;
+        height: 34px;
+        cursor: pointer;
+    }
+
+    #initial button.add_button {
+        font-family: 'Lucida Sans';
+        background: #222;
+        color: #ddd;
+        width: fit-content;
+        height: 33px;
+        font-size: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        opacity: 0.6;
+        display: inline-block;
+    }
+
+    #initial button.toggle1 {
+        border-radius: 2px;
+        padding: 2px 10px 2px 10px;
+        background: #222;
+        color: #ddd;
+        cursor: pointer;
+        position: relative;
+        font-size: 20px;
+        height: 33px;
+        opacity: 0.6;
+        width: 92px;
+        float: left;
+    }
+
+    #initial button.toggle2 {
+        border-radius: 2px;
+        background: #111;
+        color: #ddd;
+        cursor: pointer;
+        position: relative;
+        font-size: 20px;
+        height: 33px;
+        opacity: 0.8;
+        width: 92px;
+        float: left;
+        padding: 2px 10px 2px 10px;
+    }
+
+    #initial .initial_atoms_box {
+        opacity: inherit;
+        background: #bbb;
+        position: relative;
+        padding: 10px 10px 10px 10px;
+        margin: 10px 10px 10px 10px;
+    }
+
+#execute {
+    margin: 40px 40px 40px 22px;
+}
+
+    #execute select {
+        /*font-size: 50px;*/
+        max-width: 122px;
+    }
+
+    #execute .execute_state {
+        padding: 10px 10px 10px 10px;
+        margin-bottom: 10px;
+        background: #ccc;
+    }
+
+    #execute .execute_title {
+        font-size: 30px;
+        padding-left: 22px;
+        text-align: left;
+    }
+
+    #execute div.chevron {
+        width: 22px;
+        height: 22px;
+        font-size: 22px;
+        font-weight: 400;
+        cursor: pointer;
+        opacity: 0.4;
+        display: inline-block;
+        text-align: right;
+    }
+
+    #execute button.delete_state {
+        border-radius: 2px;
+        background: #222;
+        color: #ddd;
+        cursor: pointer;
+        position: relative;
+        font-size: 20px;
+        height: 31px;
+        opacity: 0.6;
+        max-width: fit-content;
+        padding: 2px 10px 2px 10px;
+    }
+
+    #execute .select_predicate {
+        opacity: inherit;
+        background: inherit;
+        position: relative;
+        width: 300px;
+        font-size: 22px;
+        height: 34px;
+        cursor: pointer;
+    }
+
+    #execute button.add_button {
+        font-family: 'Lucida Sans';
+        border-radius: 2px;
+        padding: 2px 10px 2px 10px;
+        background: #222;
+        color: #ddd;
+        cursor: pointer;
+        position: relative;
+        font-size: 20px;
+        height: 33px;
+        opacity: 0.6;
+        width: fit-content;
+        float: left;
+        display: inline-block;
+    }
+
+    #execute button.show {
+        border-radius: 2px;
+        padding: 2px 10px 2px 10px;
+        background: #222;
+        color: #ddd;
+        cursor: pointer;
+        position: relative;
+        font-size: 20px;
+        height: 33px;
+        opacity: 0.6;
+        width: 92px;
+        float: left;
+        display: inline-block;
+    }
+
+    #execute button.hide {
+        border-radius: 2px;
+        background: #111;
+        color: #ddd;
+        cursor: pointer;
+        position: relative;
+        font-size: 20px;
+        height: 33px;
+        opacity: 0.8;
+        width: 92px;
+        float: left;
+        display: inline-block;
+        padding: 2px 10px 2px 10px;
+    }
+
+    #execute .execute_atoms_box {
+        opacity: inherit;
+        background: #bbb;
+        position: relative;
+        padding: 10px 10px 10px 10px;
+        margin: 10px 10px 10px 10px;
+    }
+
+    #execute div.wrapper {
+        padding: 10px 10px 10px 10px;
+        margin-bottom: 10px;
+        background: #aaa;
+        overflow: auto;
+        height: auto;
+    }
+
+    #execute select.execution_selector {
+        background: #ccc;
+        color: #333;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: 100;
+        font-size: 22px;
+        text-align: left;
+        display: inline;
+        margin: 5px;
+        border: none;
+        min-width: 60%;
+        padding: 0 0 0 0;
+    }
+
+
+#execution_container button.delete_state {
+    border-radius: 1px;
+    background: #222;
+    color: #ddd;
+    cursor: pointer;
+    position: relative;
+    font-size: 20px;
+    height: 31px;
+    opacity: 0.6;
+    max-width: fit-content;
+    padding: 2px 10px 2px 10px;
+}
+
+#execution_container div.wrapper {
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 10px;
+    background: #aaa;
+}
+
+#editor {
+    margin: 40px 40px 40px 22px;
+}
+
+    #editor div.chevron {
+        width: 22px;
+        height: 22px;
+        font-size: 22px;
+        font-weight: 400;
+        cursor: pointer;
+        opacity: 0.4;
+        display: inline-block;
+        text-align: right;
+    }
+
+    #editor .editor_state {
+        padding: 10px 10px 10px 10px;
+        margin-bottom: 10px;
+        background: #ccc;
+    }
+
+    #editor .editor_state_header {
+        height: 40px;
+        overflow: hidden;
+    }
+
+    #editor .editor_title {
+        font-size: 27px;
+        padding-left: 22px;
+        text-align: left;
+    }
+
+    #editor .editor_title_name {
+        font-size: 27px;
+        padding-left: 22px;
+        text-align: left;
+        min-width: 90%;
+        max-width: 90%;
+    }
+
+    #editor .editor_title span {
+        font-weight: bold;
+    }
+
+    #editor .editor_textarea {
+        font-family: 'Raleway', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: 600;
+        font-size: 22px;
+        max-height: inherit;
+        margin: 0;
+        border: none;
+        width: 20%;
+        resize: none;
+        position: relative;
+        background: inherit;
+        overflow: hidden;
+    }
+
+    #editor .editor_rulestextarea {
+        font-family: 'Raleway', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: 600;
+        font-size: 22px;
+        max-height: 26px;
+        max-width: fit-content;
+        height: auto;
+        padding-top: 10px;
+        border: none;
+        resize: none;
+        margin: 0;
+        position: relative;
+        background: inherit;
+    }
+
+    #editor .editor_settextarea {
+        font-family: 'Raleway', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: 600;
+        font-size: 22px;
+        max-height: 22px;
+        height: auto;
+        padding-top: 10px;
+        border: none;
+        width: 49%;
+        resize: none;
+        position: relative;
+        background: inherit;
+        overflow: hidden;
+    }
+
+    #editor .editor_rulesleftdiv {
+        max-height: inherit;
+        margin: 0;
+        border: none;
+        width: 95%;
+        resize: none;
+        position: relative;
+        background: inherit;
+        overflow: hidden;
+        text-align: left;
+        float: left;
+    }
+
+    #editor .editor_rulesrightdiv {
+        height: 33px;
+        margin: 0;
+        border: none;
+        width: 3%;
+        resize: none;
+        position: relative;
+        background: inherit;
+        overflow: hidden;
+        text-align: right;
+        float: right;
+    }
+
+    #editor .editor_selector {
+        opacity: inherit;
+        background: #ccc;
+        position: inherit;
+        color: #333;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: 100;
+        font-size: 22px;
+        max-height: inherit;
+        text-align: left;
+        display: inline;
+        margin: 5px;
+        border: 1px solid #aaa;
+        min-width: 70%;
+        padding: 0 0 0 0;
+    }
+
+    #editor .editor_state > textarea {
+        background: inherit;
+        color: #333;
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    #editor input[type=text], #editor input[type=number] {
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: 100;
+        background: none;
+        border: 1px solid #aaa;
+        border-radius: 2px;
+    }
+
+    #editor input.editor_icon {
+        font-size: 30px;
+        text-align: center;
+        width: 40px;
+        height: 40px;
+        background: none;
+        border-right: none;
+        display: block;
+        float: left;
+        border-radius: 5px 0 0 5px;
+    }
+
+    #editor input[type=text].editor_predicatename {
+        font-size: 22px;
+        width: 100px;
+        height: 21px;
+        padding: 5px 10px;
+        display: inline-block;
+        border-radius: 0 0 0 0;
+        margin-bottom: 5px;
+    }
+
+    #editor input[type=text].editor_name {
+        font-size: 10px;
+        width: 100px;
+        height: 26px;
+        padding: 5px 10px;
+        display: inline-block;
+        border-radius: 0 0 0 0;
+    }
+
+    #editor input[type=text].editor_vars {
+        font-size: 22px;
+        width: 26px;
+        height: 26px;
+        padding: 5px 10px;
+        display: inline-block;
+        border-radius: 0 0 0 0;
+    }
+
+    #editor input[type=text].editor_text {
+        font-size: 22px;
+        width: 200px;
+        height: 26px;
+        padding: 5px 10px;
+        display: inline-block;
+        border-radius: 0 0 0 0;
+    }
+
+    #editor input[type=text].editor_number {
+        font-size: 16px;
+        width: 40px;
+        cursor: col-resize;
+        border: none;
+        border-bottom: 2px dotted #aaa;
+        border-radius: 0;
+    }
+
+    #editor .editor_new_action {
+        position: relative;
+        left: -22px;
+        width: 50px;
+        height: 22px;
+    }
+
+        #editor .editor_new_action div {
+            width: 40px;
+            height: 26px;
+            padding: 0 5px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            position: absolute;
+            font-family: sans-serif;
+            font-weight: 100;
+            font-size: 22px;
+            text-align: center;
+            color: #aaa;
+        }
+
+        #editor .editor_new_action select {
+            opacity: inherit;
+            color: #aaa;
+            position: absolute;
+            width: 50px;
+            cursor: pointer;
+        }
+
+    #editor .editor_select {
+        opacity: inherit;
+        background: inherit;
+        position: relative;
+        width: 100px;
+        height: 33px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    #editor .editor_setselect {
+        opacity: inherit;
+        background: inherit;
+        width: 100px;
+        height: 33px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    #editor .select_predicate {
+        opacity: inherit;
+        background: inherit;
+        position: relative;
+        width: 300px;
+        height: 33px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    #editor .editor_select_set {
+        opacity: inherit;
+        background: inherit;
+        position: relative;
+        width: 300px;
+        height: 33px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    #editor .editor_select_variable {
+        opacity: inherit;
+        background: inherit;
+        position: relative;
+        width: 50px;
+        height: 33px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    #editor .editor_rules_box {
+        opacity: inherit;
+        background: #bbb;
+        position: relative;
+        padding: 10px 10px 10px 10px;
+        margin: 10px 10px 10px 10px;
+    }
+
+    #editor .editor_fancy_button {
+        border-radius: 5px;
+        width: 240px;
+        height: 40px;
+        background: #aaa;
+        font-family: sans-serif;
+        font-weight: 100;
+        font-size: 22px;
+        line-height: 40px;
+        color: #ddd;
+        cursor: pointer;
+    }
+
+        #editor .editor_fancy_button:hover {
+            background: #b1b1b1;
+        }
+
+        #editor .editor_fancy_button#save_changes {
+            background: #333;
+        }
+
+            #editor .editor_fancy_button#save_changes:hover {
+                background: #555;
+            }
+
+        #editor .editor_fancy_button span {
+            font-size: 40px;
+            width: 40px;
+            display: block;
+            float: left;
+            text-align: center;
+            position: relative;
+            border-right: 1px solid #ddd;
+            line-height: 30px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+    #editor .editor_save_link {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    #editor select {
+        /*font-size: 50px;*/
+        max-width: 122px;
+    }
+
+    #editor ul {
+        margin: 0;
+        padding-left: 30px;
+        list-style-type: none;
+        position: relative;
+    }
+
+    #editor li {
+        padding-left: 0px;
+        list-style-type: none;
+        position: relative;
+        margin-bottom: 5px;
+    }
+
+    #editor div.delete_action {
+        width: 22px;
+        height: 22px;
+        font-size: 22px;
+        cursor: pointer;
+        opacity: 0.5;
+        display: inline-block;
+    }
+
+    #editor button.add_button {
+        font-family: 'Lucida Sans';
+        background: #222;
+        color: #ddd;
+        width: fit-content;
+        height: 33px;
+        font-size: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        opacity: 0.6;
+        display: inline-block;
+    }
+
+    #editor button.delete_state {
+        border-radius: 3px;
+        background: #222;
+        color: #ddd;
+        cursor: pointer;
+        position: relative;
+        font-size: 20px;
+        height: 33px;
+        opacity: 0.6;
+        max-width: fit-content;
+        padding: 2px 10px 2px 10px;
+    }
+
+    #editor button.toggle1 {
+        border-radius: 2px;
+        background: #222;
+        color: #ddd;
+        cursor: pointer;
+        position: relative;
+        font-size: 20px;
+        height: 33px;
+        opacity: 0.6;
+        width: 92px;
+        float: left;
+        padding: 2px 10px 2px 10px;
+    }
+
+    #editor button.toggle2 {
+        border-radius: 2px;
+        background: #111;
+        color: #ddd;
+        cursor: pointer;
+        position: relative;
+        font-size: 20px;
+        height: 33px;
+        opacity: 0.8;
+        width: 92px;
+        float: left;
+        padding: 2px 10px 2px 10px;
+    }
+
+    /* Tooltip text */
+    #editor button.toggle1 .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #111;
+        color: #ddd;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px;
+        /* Position the tooltip text - see examples below! */
+        width: 120px;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -60px;
+    }
+
+    /* Show the tooltip text when you mouse over the tooltip container */
+    #editor button.toggle1:hover .tooltiptext {
+        visibility: visible;
+    }
+
+    #editor li > div.delete_action:hover, #editor div.delete_state:hover {
+        opacity: 0.65;
+    }
+
+    #editor div.proportions {
+        overflow: hidden;
+    }
+
+        #editor div.proportions > div {
+            overflow: hidden;
+        }
+
+            #editor div.proportions > div > span {
+                width: 1em;
+                height: 1em;
+                display: inline-block;
+                border-right: 1px solid #aaa;
+                padding-right: 5px;
+                margin-right: 5px;
+            }
+
+            #editor div.proportions > div > input[type=range] {
+                width: 230px;
+            }
+
+    #editor hr {
+        margin: 40px 0;
+        border: none;
+        height: 4px;
+        border-bottom: 1px solid #aaa;
+        border-top: 1px solid #aaa;
+    }
+
+.frame::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+    .frame::-webkit-scrollbar:vertical {
+        width: 22px;
+    }
+
+    .frame::-webkit-scrollbar:horizontal {
+        height: 11px;
+    }
+
+.frame::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.frame::-webkit-scrollbar-track {
+    background-color: #7f7f7f;
+    border-radius: 5px;
+}

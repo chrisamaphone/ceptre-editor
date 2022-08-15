@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>MicroCeptre</title>
+    <link rel="stylesheet" href="microceptre.css" type="text/css">
+    <script src="ui.js"></script>
+    <script src="execution.js"></script>
+    <script src="filter.js"></script>
+    <script src="naturalNumbers.js"></script>
+    <script src="math.js"></script>
+    <script async src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"></script>
+</head>
+
+<body>
+    <div id="editor_container" class="ps-container ps-active-y" data-ps-id="69720643-43ee-f23a-4f1b-0adcc25ddba9">
+        <!-- class="frame"-->
+        <div id="editor">
+            <div class="editor_state" align="right">
+                <input type="checkbox" id="interactive">Interactive<br>
+                <button class="delete_state" id="ceptreDumpButton">Generate Ceptre Code</button>
+                <input type="file" id="programFile" name="file" />
+                <input type="text" id="programName" placeholder="Program Name" />
+                <button id="saveProgramState">Save Program</button>
+                <div class="editor_title">
+                    <div class="expand_sets" style="font-weight: 800; font-size: 26px;">
+                        <div class="chevron" style="font-weight: 800; font-size: 26px;" id="setsChevron">&#9650</div>
+                        SETS
+                    </div>
+                    <hr>
+                </div>
+                <div id="sets">
+                    <textarea class="editor_settextarea" placeholder="Set Name" style="float: left;" id="setNameTextbox"></textarea>
+                    <button class="delete_state" id="addSetButton">Add Set +</button>
+                    <div style="content: ''; clear: both; display: table;"></div>
+                    <div>
+                        <select class="editor_select_set" style="float: left;" id="setSelector"></select>
+                        <select class="editor_selector" style="float: right;" rows="5" cols="50" multiple id="setElementViewer"></select>
+                    </div>
+                    <div style="content: ''; clear: both; display: table;"></div>
+                    <button class="delete_state" style="float: left" id="removeSet">Remove Set</button>
+                    <button class="delete_state" id="removeSetElement">Remove Element</button>
+                    <div class="editor_actions" style="padding-top: 10px" align="left">
+                        <ul>
+                            <li>
+                                <span>Add to currently selected set:</span>
+                                <input type="text" class="editor_text" onkeydown="if (event.keyCode == 13)
+                                document.getElementById('addSetElementButton').click()"
+                                       id="addElementName" />
+                                <button class="add_button" id="addSetElementButton">+</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="editor_state">
+                <div class="editor_title">
+                    <div class="expand_predicates" style="font-weight: 800; font-size: 26px;">
+                        <div class="chevron" style="font-weight: 800; font-size: 26px;" id="predicatesChevron">&#9650</div>
+                        PREDICATES
+                    </div>
+                    <hr>
+                </div>
+                <div id="predicates">
+                    <button class="delete_state" id="addPredicateButton" onclick="addPredicate(this.id)">Add Predicate</button>
+                </div>
+            </div>
+            <div class="editor_state">
+                <div class="editor_title">
+                    <div class="expand_rules" style="font-weight: 800; font-size: 26px;">
+                        <div class="chevron" style="font-weight: 800; font-size: 26px;" id="rulesChevron">&#9650</div>
+                        RULES
+                        <button class="delete_state" id="finalize_rules" onclick="finalizeRules()">Lock All Rules</button>
+                    </div>
+                    <hr>
+                </div>
+                <div id="rules">
+                    <button class="delete_state" id="add_button" onclick="addRule(this.id)">Add Rule</button>
+                </div>
+            </div>
+        </div>
+        <div id="initial">
+            <div class="initial_state" align="right">
+                <input type="checkbox" id="interactive2">Interactive<br>
+                <button class="delete_state" id="ceptreDumpButton2">Generate Ceptre Code</button>
+                <input type="file" id="files" name="file" />
+                <input type="text" id="stateName" placeholder="Initial State Name" />
+                <button id="saveInitialState">Save Initial State</button>
+                <div class="initial_title">
+                    <div class="expand_atoms" style="font-weight: 800; font-size: 26px;">
+                        <div class="chevron" style="font-weight: 800; font-size: 26px;" id="atomsChevron">&#9650</div>
+                        INITIAL STATE
+                    </div>
+                    <button class="delete_state" id="finalizeAllAtoms" onclick="finalizeAllAtoms()">Lock All Atoms
+                </div>
+                <hr>
+            </div>
+            <div align="left" class="initial_atoms_box" id="atoms">
+                <button class="delete_state" id="addInitialState" onclick="addAtom(this.id)">Add Atom
+            </div>
+        </div>
+        <div id="execute">
+            <div class="execute_state">
+                <div class="wrapper" style="font-weight: 800; font-size: 26px; min-height: fit-contents;">
+                    TRANSITIONS
+                    <hr>
+                    <select size="10" class="execution_selector" style="float: right; font-size: 22px; background:#ddd;"
+                            multiple id="transitionViewer"></select>
+                    <div class="wrapper">
+                        <button class="delete_state" id="nextState" onclick="transisitionSelected()">
+                            Execute
+                            Transition
+                        </button>
+                        <br />
+                        <button class="delete_state" id="unguidedExecution" onclick="unguidedExecutionLoop(1000)">
+                            Execute
+                            to Quiescence
+                        </button>
+                        <br />
+                        <button class="delete_state" id="unguidedExecution" onclick="unguidedExecutionLoop()">
+                            Auto
+                            Execute
+                        </button>
+                        <br />
+                        <input type="number" id="numAuto" placeholder="# of auto transitions" />
+                        <br />
+                        <div>Enter the number of automated transitions.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="execute_state">
+                <div class="wrapper" style="font-weight: 800; font-size: 26px; min-height: fit-contents;">
+                    Filter
+                    <hr>
+                    
+                    <button class="delete_state" id="addFilterGroup" onclick="addFilterGroup(this.id)">Add Filter Group
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="execution_container" class="ps=container ps-active-y" data-ps-id="69720643-43ee-f23a-4f1b-0adcc25ddba9">
+        <textarea id="ceptreText" style="width: 100%; height: 20%" hidden="hidden"></textarea>
+        <button class="delete_state" id="initializeExecution" onclick="initializeExecution()">Start Execution</button>
+        <div class="wrapper" style="font-weight: 800; font-size: 26px; height: 55%;">
+            STATES
+            <div id="statePrinter" style="overflow-y: scroll; font-weight: 400; width: 100%; height: 80%; font-size: 22px; background:#ddd; white-space: pre-wrap;"></div>
+        </div>
+        <div class="wrapper" style="font-weight: 800; font-size: 26px; height: 30%;">
+            FILTERED STATE
+            <div id="filterPrinter" style="overflow-y: scroll; font-weight: 400; width: 100%; height: 80%; font-size: 22px; background:#ddd; white-space: pre-wrap;"></div>
+        </div>
+    </div>
+</body>
+
+</html>
