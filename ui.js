@@ -621,7 +621,7 @@ function updateArgumentSelector(argument, rulePredicate, ruleSets) {
     //determine if the predicate is a condition or a filter
     if ((rulePredicate.id.charAt(0) == 'c' && !isNumPred(rulePredicate.name)) || rulePredicate.id.charAt(0) == 'f')
         argSet.add('new variable');
-    if (!isNumPred(rulePredicate.name) && argument.type=='numbers') {
+    if (argument.type=='numbers') {
         if (!(rulePredicate.id.charAt(0) == 'c' && !isNumPred(rulePredicate.name)) && rulePredicate.id.charAt(0) != 'f' && rulePredicate.id.charAt(0) != 'i')
             argSet.add('new expression');
         argSet.add('new number')
