@@ -1,0 +1,1345 @@
+﻿[
+  [
+    {
+      "id": "numbers",
+      "elements": []
+    },
+    {
+      "id": "player",
+      "elements": [
+        "player_a",
+        "player_b",
+        "player_c",
+        "player_d"
+      ]
+    },
+    {
+      "id": "city",
+      "elements": [
+        "atlanta",
+        "delhi",
+        "bogota",
+        "los_angeles",
+        "kinshasa"
+      ]
+    },
+    {
+      "id": "card",
+      "elements": [
+        "epidemic",
+        "atlanta_card",
+        "bogota_card",
+        "la_card",
+        "kinshasa_card",
+        "delhi_card"
+      ]
+    }
+  ],
+  [
+    {
+      "id": "p0",
+      "name": "turn",
+      "argumentIndex": 1,
+      "arguments": [
+        {
+          "id": "p0.0",
+          "value": "player"
+        }
+      ]
+    },
+    {
+      "id": "p1",
+      "name": "at",
+      "argumentIndex": 2,
+      "arguments": [
+        {
+          "id": "p1.0",
+          "value": "player"
+        },
+        {
+          "id": "p1.1",
+          "value": "city"
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "name": "hand",
+      "argumentIndex": 2,
+      "arguments": [
+        {
+          "id": "p2.0",
+          "value": "player"
+        },
+        {
+          "id": "p2.1",
+          "value": "card"
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "name": "research_center",
+      "argumentIndex": 1,
+      "arguments": [
+        {
+          "id": "p3.0",
+          "value": "city"
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "name": "disease",
+      "argumentIndex": 1,
+      "arguments": [
+        {
+          "id": "p4.0",
+          "value": "city"
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "name": "adjacent",
+      "argumentIndex": 2,
+      "arguments": [
+        {
+          "id": "p5.0",
+          "value": "city"
+        },
+        {
+          "id": "p5.1",
+          "value": "city"
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "name": "city_card",
+      "argumentIndex": 2,
+      "arguments": [
+        {
+          "id": "p6.0",
+          "value": "card"
+        },
+        {
+          "id": "p6.1",
+          "value": "city"
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "name": "disease_cured",
+      "argumentIndex": 0,
+      "arguments": []
+    }
+  ],
+  [
+    {
+      "id": "p0",
+      "name": "turn",
+      "argumentIndex": 1,
+      "arguments": [
+        {
+          "id": "p0.0",
+          "value": "player"
+        }
+      ]
+    },
+    {
+      "id": "p1",
+      "name": "at",
+      "argumentIndex": 2,
+      "arguments": [
+        {
+          "id": "p1.0",
+          "value": "player"
+        },
+        {
+          "id": "p1.1",
+          "value": "city"
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "name": "hand",
+      "argumentIndex": 2,
+      "arguments": [
+        {
+          "id": "p2.0",
+          "value": "player"
+        },
+        {
+          "id": "p2.1",
+          "value": "card"
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "name": "research_center",
+      "argumentIndex": 1,
+      "arguments": [
+        {
+          "id": "p3.0",
+          "value": "city"
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "name": "disease",
+      "argumentIndex": 1,
+      "arguments": [
+        {
+          "id": "p4.0",
+          "value": "city"
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "name": "adjacent",
+      "argumentIndex": 2,
+      "arguments": [
+        {
+          "id": "p5.0",
+          "value": "city"
+        },
+        {
+          "id": "p5.1",
+          "value": "city"
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "name": "city_card",
+      "argumentIndex": 2,
+      "arguments": [
+        {
+          "id": "p6.0",
+          "value": "card"
+        },
+        {
+          "id": "p6.1",
+          "value": "city"
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "name": "disease_cured",
+      "argumentIndex": 0,
+      "arguments": []
+    }
+  ],
+  [
+    {
+      "index": 1,
+      "id": "r1container",
+      "name": "drive",
+      "conditionIndex": 4,
+      "addIndex": 2,
+      "predicateSet": [
+        {
+          "id": "c.1.0",
+          "name": "turn",
+          "arguments": [
+            {
+              "id": "c.1.0.0",
+              "arg": "P",
+              "type": "player",
+              "variable": true
+            }
+          ],
+          "removeFlag": true
+        },
+        {
+          "id": "c.1.1",
+          "name": "at",
+          "arguments": [
+            {
+              "id": "c.1.1.0",
+              "arg": "P",
+              "type": "player",
+              "variable": true
+            },
+            {
+              "id": "c.1.1.1",
+              "arg": "C",
+              "type": "city",
+              "variable": true
+            }
+          ],
+          "removeFlag": true
+        },
+        {
+          "id": "c.1.2",
+          "name": "adjacent",
+          "arguments": [
+            {
+              "id": "c.1.2.0",
+              "arg": "C",
+              "type": "city",
+              "variable": true
+            },
+            {
+              "id": "c.1.2.1",
+              "arg": "C'",
+              "type": "city",
+              "variable": true
+            }
+          ],
+          "removeFlag": false
+        },
+        {
+          "id": "a.1.0",
+          "name": "at",
+          "arguments": [
+            {
+              "id": "a.1.0.0",
+              "arg": "P",
+              "type": "player",
+              "variable": true
+            },
+            {
+              "id": "a.1.0.1",
+              "arg": "C'",
+              "type": "city",
+              "variable": true
+            }
+          ],
+          "removeFlag": false
+        }
+      ],
+      "sets": [
+        {
+          "id": "numbers",
+          "elements": []
+        },
+        {
+          "id": "player",
+          "elements": [
+            "P"
+          ]
+        },
+        {
+          "id": "city",
+          "elements": [
+            "C",
+            "C'"
+          ]
+        },
+        {
+          "id": "card",
+          "elements": []
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "id": "r2container",
+      "name": "fly",
+      "conditionIndex": 4,
+      "addIndex": 2,
+      "predicateSet": [
+        {
+          "id": "c.2.0",
+          "name": "turn",
+          "arguments": [
+            {
+              "id": "c.2.0.0",
+              "arg": "P",
+              "type": "player",
+              "variable": true
+            }
+          ],
+          "removeFlag": true
+        },
+        {
+          "id": "c.2.1",
+          "name": "at",
+          "arguments": [
+            {
+              "id": "c.2.1.0",
+              "arg": "P",
+              "type": "player",
+              "variable": true
+            },
+            {
+              "id": "c.2.1.1",
+              "arg": "C",
+              "type": "city",
+              "variable": true
+            }
+          ],
+          "removeFlag": true
+        },
+        {
+          "id": "c.2.2",
+          "name": "hand",
+          "arguments": [
+            {
+              "id": "c.2.2.0",
+              "arg": "P",
+              "type": "player",
+              "variable": true
+            },
+            {
+              "id": "c.2.2.1",
+              "arg": "CityCard",
+              "type": "card",
+              "variable": true
+            }
+          ],
+          "removeFlag": false
+        },
+        {
+          "id": "c.2.3",
+          "name": "city_card",
+          "arguments": [
+            {
+              "id": "c.2.3.0",
+              "arg": "CityCard",
+              "type": "card",
+              "variable": true
+            },
+            {
+              "id": "c.2.3.1",
+              "arg": "C'",
+              "type": "city",
+              "variable": true
+            }
+          ],
+          "removeFlag": false
+        },
+        {
+          "id": "a.2.0",
+          "name": "at",
+          "arguments": [
+            {
+              "id": "a.2.0.0",
+              "arg": "P",
+              "type": "player",
+              "variable": true
+            },
+            {
+              "id": "a.2.0.1",
+              "arg": "C'",
+              "type": "city",
+              "variable": true
+            }
+          ],
+          "removeFlag": false
+        }
+      ],
+      "sets": [
+        {
+          "id": "numbers",
+          "elements": []
+        },
+        {
+          "id": "player",
+          "elements": [
+            "P"
+          ]
+        },
+        {
+          "id": "city",
+          "elements": [
+            "C",
+            "C'"
+          ]
+        },
+        {
+          "id": "card",
+          "elements": [
+            "CityCard"
+          ]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "id": "r3container",
+      "name": "treat",
+      "conditionIndex": 3,
+      "addIndex": 0,
+      "predicateSet": [
+        {
+          "id": "c.3.0",
+          "name": "turn",
+          "arguments": [
+            {
+              "id": "c.3.0.0",
+              "arg": "Player",
+              "type": "player",
+              "variable": true
+            }
+          ],
+          "removeFlag": true
+        },
+        {
+          "id": "c.3.1",
+          "name": "at",
+          "arguments": [
+            {
+              "id": "c.3.1.0",
+              "arg": "Player",
+              "type": "player",
+              "variable": true
+            },
+            {
+              "id": "c.3.1.1",
+              "arg": "City",
+              "type": "city",
+              "variable": true
+            }
+          ],
+          "removeFlag": false
+        },
+        {
+          "id": "c.3.2",
+          "name": "disease",
+          "arguments": [
+            {
+              "id": "c.3.2.0",
+              "arg": "City",
+              "type": "city",
+              "variable": true
+            }
+          ],
+          "removeFlag": true
+        }
+      ],
+      "sets": [
+        {
+          "id": "numbers",
+          "elements": []
+        },
+        {
+          "id": "player",
+          "elements": [
+            "Player"
+          ]
+        },
+        {
+          "id": "city",
+          "elements": [
+            "City"
+          ]
+        },
+        {
+          "id": "card",
+          "elements": []
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "id": "r4container",
+      "name": "build",
+      "conditionIndex": 4,
+      "addIndex": 2,
+      "predicateSet": [
+        {
+          "id": "c.4.0",
+          "name": "turn",
+          "arguments": [
+            {
+              "id": "c.4.0.0",
+              "arg": "Player",
+              "type": "player",
+              "variable": true
+            }
+          ],
+          "removeFlag": true
+        },
+        {
+          "id": "c.4.1",
+          "name": "at",
+          "arguments": [
+            {
+              "id": "c.4.1.0",
+              "arg": "Player",
+              "type": "player",
+              "variable": true
+            },
+            {
+              "id": "c.4.1.1",
+              "arg": "City",
+              "type": "city",
+              "variable": true
+            }
+          ],
+          "removeFlag": false
+        },
+        {
+          "id": "c.4.2",
+          "name": "hand",
+          "arguments": [
+            {
+              "id": "c.4.2.0",
+              "arg": "Player",
+              "type": "player",
+              "variable": true
+            },
+            {
+              "id": "c.4.2.1",
+              "arg": "Card",
+              "type": "card",
+              "variable": true
+            }
+          ],
+          "removeFlag": true
+        },
+        {
+          "id": "c.4.3",
+          "name": "city_card",
+          "arguments": [
+            {
+              "id": "c.4.3.0",
+              "arg": "Card",
+              "type": "card",
+              "variable": true
+            },
+            {
+              "id": "c.4.3.1",
+              "arg": "City",
+              "type": "city",
+              "variable": true
+            }
+          ],
+          "removeFlag": false
+        },
+        {
+          "id": "a.4.0",
+          "name": "research_center",
+          "arguments": [
+            {
+              "id": "a.4.0.0",
+              "arg": "City",
+              "type": "city",
+              "variable": true
+            }
+          ],
+          "removeFlag": false
+        }
+      ],
+      "sets": [
+        {
+          "id": "numbers",
+          "elements": []
+        },
+        {
+          "id": "player",
+          "elements": [
+            "Player"
+          ]
+        },
+        {
+          "id": "city",
+          "elements": [
+            "City"
+          ]
+        },
+        {
+          "id": "card",
+          "elements": [
+            "Card"
+          ]
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "id": "r5container",
+      "name": "discover_cure",
+      "conditionIndex": 8,
+      "addIndex": 2,
+      "predicateSet": [
+        {
+          "id": "c.5.0",
+          "name": "turn",
+          "arguments": [
+            {
+              "id": "c.5.0.0",
+              "arg": "Player",
+              "type": "player",
+              "variable": true
+            }
+          ],
+          "removeFlag": true
+        },
+        {
+          "id": "c.5.1",
+          "name": "at",
+          "arguments": [
+            {
+              "id": "c.5.1.0",
+              "arg": "Player",
+              "type": "player",
+              "variable": true
+            },
+            {
+              "id": "c.5.1.1",
+              "arg": "City",
+              "type": "city",
+              "variable": true
+            }
+          ],
+          "removeFlag": false
+        },
+        {
+          "id": "c.5.2",
+          "name": "research_center",
+          "arguments": [
+            {
+              "id": "c.5.2.0",
+              "arg": "City",
+              "type": "city",
+              "variable": true
+            }
+          ],
+          "removeFlag": false
+        },
+        {
+          "id": "c.5.3",
+          "name": "hand",
+          "arguments": [
+            {
+              "id": "c.5.3.0",
+              "arg": "Player",
+              "type": "player",
+              "variable": true
+            },
+            {
+              "id": "c.5.3.1",
+              "arg": "Card1",
+              "type": "card",
+              "variable": true
+            }
+          ],
+          "removeFlag": true
+        },
+        {
+          "id": "c.5.4",
+          "name": "hand",
+          "arguments": [
+            {
+              "id": "c.5.4.0",
+              "arg": "Player",
+              "type": "player",
+              "variable": true
+            },
+            {
+              "id": "c.5.4.1",
+              "arg": "Card2",
+              "type": "card",
+              "variable": true
+            }
+          ],
+          "removeFlag": true
+        },
+        {
+          "id": "c.5.5",
+          "name": "hand",
+          "arguments": [
+            {
+              "id": "c.5.5.0",
+              "arg": "Player",
+              "type": "player",
+              "variable": true
+            },
+            {
+              "id": "c.5.5.1",
+              "arg": "Card3",
+              "type": "card",
+              "variable": true
+            }
+          ],
+          "removeFlag": true
+        },
+        {
+          "id": "c.5.6",
+          "name": "hand",
+          "arguments": [
+            {
+              "id": "c.5.6.0",
+              "arg": "Player",
+              "type": "player",
+              "variable": true
+            },
+            {
+              "id": "c.5.6.1",
+              "arg": "Card4",
+              "type": "card",
+              "variable": true
+            }
+          ],
+          "removeFlag": true
+        },
+        {
+          "id": "c.5.7",
+          "name": "hand",
+          "arguments": [
+            {
+              "id": "c.5.7.0",
+              "arg": "Player",
+              "type": "player",
+              "variable": true
+            },
+            {
+              "id": "c.5.7.1",
+              "arg": "Card5",
+              "type": "card",
+              "variable": true
+            }
+          ],
+          "removeFlag": true
+        },
+        {
+          "id": "a.5.0",
+          "name": "disease_cured",
+          "arguments": [],
+          "removeFlag": false
+        }
+      ],
+      "sets": [
+        {
+          "id": "numbers",
+          "elements": []
+        },
+        {
+          "id": "player",
+          "elements": [
+            "Player"
+          ]
+        },
+        {
+          "id": "city",
+          "elements": [
+            "City"
+          ]
+        },
+        {
+          "id": "card",
+          "elements": [
+            "Card1",
+            "Card2",
+            "Card3",
+            "Card4",
+            "Card5"
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "id": "i0",
+      "name": "city_card",
+      "argumentIndex": 0,
+      "arguments": [
+        {
+          "id": "i0.0",
+          "arg": "atlanta_card",
+          "type": "card",
+          "variable": false,
+          "value": "atlanta_card"
+        },
+        {
+          "id": "i0.1",
+          "arg": "atlanta",
+          "type": "city",
+          "variable": false,
+          "value": "atlanta"
+        }
+      ]
+    },
+    {
+      "id": "i1",
+      "name": "city_card",
+      "arguments": [
+        {
+          "id": "i1.0",
+          "arg": "bogota_card",
+          "type": "card",
+          "variable": false,
+          "value": "bogota_card"
+        },
+        {
+          "id": "i1.1",
+          "arg": "bogota",
+          "type": "city",
+          "variable": false,
+          "value": "bogota"
+        }
+      ]
+    },
+    {
+      "id": "i2",
+      "name": "city_card",
+      "arguments": [
+        {
+          "id": "i2.0",
+          "arg": "la_card",
+          "type": "card",
+          "variable": false,
+          "value": "la_card"
+        },
+        {
+          "id": "i2.1",
+          "arg": "los_angeles",
+          "type": "city",
+          "variable": false,
+          "value": "los_angeles"
+        }
+      ]
+    },
+    {
+      "id": "i3",
+      "name": "city_card",
+      "arguments": [
+        {
+          "id": "i3.0",
+          "arg": "bogota_card",
+          "type": "card",
+          "variable": false,
+          "value": "bogota_card"
+        },
+        {
+          "id": "i3.1",
+          "arg": "bogota",
+          "type": "city",
+          "variable": false,
+          "value": "bogota"
+        }
+      ]
+    },
+    {
+      "id": "i4",
+      "name": "city_card",
+      "argumentIndex": 0,
+      "arguments": [
+        {
+          "id": "i4.0",
+          "arg": "kinshasa_card",
+          "type": "card",
+          "variable": false,
+          "value": "kinshasa_card"
+        },
+        {
+          "id": "i4.1",
+          "arg": "kinshasa",
+          "type": "city",
+          "variable": false,
+          "value": "kinshasa"
+        }
+      ]
+    },
+    {
+      "id": "i5",
+      "name": "city_card",
+      "arguments": [
+        {
+          "id": "i5.0",
+          "arg": "delhi_card",
+          "type": "card",
+          "variable": false,
+          "value": "delhi_card"
+        },
+        {
+          "id": "i5.1",
+          "arg": "delhi",
+          "type": "city",
+          "variable": false,
+          "value": "delhi"
+        }
+      ]
+    },
+    {
+      "id": "i6",
+      "name": "adjacent",
+      "argumentIndex": 0,
+      "arguments": [
+        {
+          "id": "i6.0",
+          "arg": "atlanta",
+          "type": "city",
+          "variable": false,
+          "value": "atlanta"
+        },
+        {
+          "id": "i6.1",
+          "arg": "los_angeles",
+          "type": "city",
+          "variable": false,
+          "value": "los_angeles"
+        }
+      ]
+    },
+    {
+      "id": "i7",
+      "name": "adjacent",
+      "arguments": [
+        {
+          "id": "i7.0",
+          "arg": "los_angeles",
+          "type": "city",
+          "variable": false,
+          "value": "los_angeles"
+        },
+        {
+          "id": "i7.1",
+          "arg": "atlanta",
+          "type": "city",
+          "variable": false,
+          "value": "atlanta"
+        }
+      ]
+    },
+    {
+      "id": "i8",
+      "name": "adjacent",
+      "arguments": [
+        {
+          "id": "i8.0",
+          "arg": "los_angeles",
+          "type": "city",
+          "variable": false,
+          "value": "los_angeles"
+        },
+        {
+          "id": "i8.1",
+          "arg": "bogota",
+          "type": "city",
+          "variable": false,
+          "value": "bogota"
+        }
+      ]
+    },
+    {
+      "id": "i9",
+      "name": "adjacent",
+      "arguments": [
+        {
+          "id": "i9.0",
+          "arg": "bogota",
+          "type": "city",
+          "variable": false,
+          "value": "bogota"
+        },
+        {
+          "id": "i9.1",
+          "arg": "los_angeles",
+          "type": "city",
+          "variable": false,
+          "value": "los_angeles"
+        }
+      ]
+    },
+    {
+      "id": "i10",
+      "name": "adjacent",
+      "arguments": [
+        {
+          "id": "i10.0",
+          "arg": "bogota",
+          "type": "city",
+          "variable": false,
+          "value": "bogota"
+        },
+        {
+          "id": "i10.1",
+          "arg": "kinshasa",
+          "type": "city",
+          "variable": false,
+          "value": "kinshasa"
+        }
+      ]
+    },
+    {
+      "id": "i11",
+      "name": "adjacent",
+      "arguments": [
+        {
+          "id": "i11.0",
+          "arg": "kinshasa",
+          "type": "city",
+          "variable": false,
+          "value": "kinshasa"
+        },
+        {
+          "id": "i11.1",
+          "arg": "bogota",
+          "type": "city",
+          "variable": false,
+          "value": "bogota"
+        }
+      ]
+    },
+    {
+      "id": "i12",
+      "name": "adjacent",
+      "arguments": [
+        {
+          "id": "i12.0",
+          "arg": "kinshasa",
+          "type": "city",
+          "variable": false,
+          "value": "kinshasa"
+        },
+        {
+          "id": "i12.1",
+          "arg": "delhi",
+          "type": "city",
+          "variable": false,
+          "value": "delhi"
+        }
+      ]
+    },
+    {
+      "id": "i13",
+      "name": "adjacent",
+      "arguments": [
+        {
+          "id": "i13.0",
+          "arg": "delhi",
+          "type": "city",
+          "variable": false,
+          "value": "delhi"
+        },
+        {
+          "id": "i13.1",
+          "arg": "kinshasa",
+          "type": "city",
+          "variable": false,
+          "value": "kinshasa"
+        }
+      ]
+    },
+    {
+      "id": "i14",
+      "name": "adjacent",
+      "arguments": [
+        {
+          "id": "i14.0",
+          "arg": "delhi",
+          "type": "city",
+          "variable": false,
+          "value": "delhi"
+        },
+        {
+          "id": "i14.1",
+          "arg": "los_angeles",
+          "type": "city",
+          "variable": false,
+          "value": "los_angeles"
+        }
+      ]
+    },
+    {
+      "id": "i15",
+      "name": "adjacent",
+      "arguments": [
+        {
+          "id": "i15.0",
+          "arg": "los_angeles",
+          "type": "city",
+          "variable": false,
+          "value": "los_angeles"
+        },
+        {
+          "id": "i15.1",
+          "arg": "delhi",
+          "type": "city",
+          "variable": false,
+          "value": "delhi"
+        }
+      ]
+    },
+    {
+      "id": "i16",
+      "name": "at",
+      "argumentIndex": 0,
+      "arguments": [
+        {
+          "id": "i16.0",
+          "arg": "player_a",
+          "type": "player",
+          "variable": false,
+          "value": "player_a"
+        },
+        {
+          "id": "i16.1",
+          "arg": "atlanta",
+          "type": "city",
+          "variable": false,
+          "value": "atlanta"
+        }
+      ]
+    },
+    {
+      "id": "i17",
+      "name": "at",
+      "arguments": [
+        {
+          "id": "i17.0",
+          "arg": "player_b",
+          "type": "player",
+          "variable": false,
+          "value": "player_b"
+        },
+        {
+          "id": "i17.1",
+          "arg": "atlanta",
+          "type": "city",
+          "variable": false,
+          "value": "atlanta"
+        }
+      ]
+    },
+    {
+      "id": "i18",
+      "name": "at",
+      "arguments": [
+        {
+          "id": "i18.0",
+          "arg": "player_c",
+          "type": "player",
+          "variable": false,
+          "value": "player_c"
+        },
+        {
+          "id": "i18.1",
+          "arg": "atlanta",
+          "type": "city",
+          "variable": false,
+          "value": "atlanta"
+        }
+      ]
+    },
+    {
+      "id": "i19",
+      "name": "at",
+      "arguments": [
+        {
+          "id": "i19.0",
+          "arg": "player_d",
+          "type": "player",
+          "variable": false,
+          "value": "player_d"
+        },
+        {
+          "id": "i19.1",
+          "arg": "atlanta",
+          "type": "city",
+          "variable": false,
+          "value": "atlanta"
+        }
+      ]
+    },
+    {
+      "id": "i20",
+      "name": "turn",
+      "argumentIndex": 0,
+      "arguments": [
+        {
+          "id": "i20.0",
+          "arg": "player_a",
+          "type": "player",
+          "variable": false,
+          "value": "player_a"
+        }
+      ]
+    },
+    {
+      "id": "i21",
+      "name": "turn",
+      "arguments": [
+        {
+          "id": "i21.0",
+          "arg": "player_a",
+          "type": "player",
+          "variable": false,
+          "value": "player_a"
+        }
+      ]
+    },
+    {
+      "id": "i22",
+      "name": "turn",
+      "arguments": [
+        {
+          "id": "i22.0",
+          "arg": "player_a",
+          "type": "player",
+          "variable": false,
+          "value": "player_a"
+        }
+      ]
+    },
+    {
+      "id": "i23",
+      "name": "turn",
+      "arguments": [
+        {
+          "id": "i23.0",
+          "arg": "player_a",
+          "type": "player",
+          "variable": false,
+          "value": "player_a"
+        }
+      ]
+    },
+    {
+      "id": "i24",
+      "name": "hand",
+      "argumentIndex": 0,
+      "arguments": [
+        {
+          "id": "i24.0",
+          "arg": "player_a",
+          "type": "player",
+          "variable": false,
+          "value": "player_a"
+        },
+        {
+          "id": "i24.1",
+          "arg": "bogota_card",
+          "type": "card",
+          "variable": false,
+          "value": "bogota_card"
+        }
+      ]
+    },
+    {
+      "id": "i25",
+      "name": "hand",
+      "arguments": [
+        {
+          "id": "i25.0",
+          "arg": "player_a",
+          "type": "player",
+          "variable": false,
+          "value": "player_a"
+        },
+        {
+          "id": "i25.1",
+          "arg": "la_card",
+          "type": "card",
+          "variable": false,
+          "value": "la_card"
+        }
+      ]
+    }
+  ],
+  8,
+  6,
+  26
+]
